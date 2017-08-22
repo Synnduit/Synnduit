@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Synnduit.SqlDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7bb13629-1af5-47cc-a3cf-49700dbe7061}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Synnduit.SqlDb</RootNamespace>
+    <AssemblyName>Synnduit.SqlDb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Functions" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Functions\OperationExists.sql" />
+    <Build Include="Tables\EntityDeletion.sql" />
+    <Build Include="Tables\EntityTransaction.sql" />
+    <Build Include="Tables\EntityType.sql" />
+    <Build Include="Tables\ExternalSystem.sql" />
+    <Build Include="Tables\Feed.sql" />
+    <Build Include="Tables\IdentityEntityTransaction.sql" />
+    <Build Include="Tables\IdentityMessage.sql" />
+    <Build Include="Tables\IdentityObject.sql" />
+    <Build Include="Tables\IdentitySourceSystemEntity.sql" />
+    <Build Include="Tables\Mapping.sql" />
+    <Build Include="Tables\MappingEntityTransaction.sql" />
+    <Build Include="Tables\MappingStateChange.sql" />
+    <Build Include="Tables\Message.sql" />
+    <Build Include="Tables\Operation.sql" />
+    <Build Include="Tables\OperationDestinationSystemEntity.sql" />
+    <Build Include="Tables\OperationMessage.sql" />
+    <Build Include="Tables\OperationSourceSystemEntity.sql" />
+    <Build Include="Tables\Parameter.sql" />
+    <Build Include="Tables\SerializedEntity.sql" />
+    <Build Include="Tables\SharedSourceSystemIdentifier.sql" />
+    <Build Include="Tables\SourceSystemEntityIdentity.sql" />
+    <Build Include="Tables\ValueChange.sql" />
+    <Build Include="StoredProcedures\ClearSharedSourceSystemIdentifiers.sql" />
+    <Build Include="StoredProcedures\CreateEntityDeletion.sql" />
+    <Build Include="StoredProcedures\CreateEntityTransaction.sql" />
+    <Build Include="StoredProcedures\CreateIdentityEntityTransaction.sql" />
+    <Build Include="StoredProcedures\CreateIdentityMessage.sql" />
+    <Build Include="StoredProcedures\CreateIdentityOperationMessage.sql" />
+    <Build Include="StoredProcedures\CreateIdentityOperationSourceSystemEntity.sql" />
+    <Build Include="StoredProcedures\CreateIdentitySourceSystemEntity.sql" />
+    <Build Include="StoredProcedures\CreateMapping.sql" />
+    <Build Include="StoredProcedures\CreateMappingEntityTransaction.sql" />
+    <Build Include="StoredProcedures\CreateOperationDestinationSystemEntity.sql" />
+    <Build Include="StoredProcedures\CreateOperationMessage.sql" />
+    <Build Include="StoredProcedures\CreateOperationSourceSystemEntity.sql" />
+    <Build Include="StoredProcedures\CreateOrUpdateEntityType.sql" />
+    <Build Include="StoredProcedures\CreateOrUpdateExternalSystem.sql" />
+    <Build Include="StoredProcedures\CreateOrUpdateFeed.sql" />
+    <Build Include="StoredProcedures\CreateParameter.sql" />
+    <Build Include="StoredProcedures\CreateSharedSourceSystemIdentifier.sql" />
+    <Build Include="StoredProcedures\CreateValueChange.sql" />
+    <Build Include="StoredProcedures\DeleteParameter.sql" />
+    <Build Include="StoredProcedures\EnsureMessageExists.sql" />
+    <Build Include="StoredProcedures\EnsureOperationExists.sql" />
+    <Build Include="StoredProcedures\EnsureSerializedEntityExists.sql" />
+    <Build Include="StoredProcedures\EnsureSourceSystemEntityIdentityExists.sql" />
+    <Build Include="StoredProcedures\InsertIdentityObjectRow.sql" />
+    <Build Include="StoredProcedures\InsertOperationMessageRow.sql" />
+    <Build Include="StoredProcedures\InsertOperationSourceSystemEntityRow.sql" />
+    <Build Include="StoredProcedures\SetMappingState.sql" />
+    <Build Include="StoredProcedures\SetParameterValue.sql" />
+    <Build Include="StoredProcedures\UpdateIdentityCorrelationId.sql" />
+    <Build Include="StoredProcedures\UpdateIdentityObject.sql" />
+    <Build Include="StoredProcedures\UpdateMappingEntity.sql" />
+    <Build Include="Views\EntityMapping.sql" />
+    <Build Include="Views\EntityValueChange.sql" />
+    <Build Include="Views\MappedEntityIdentifier.sql" />
+    <Build Include="Views\MappingEntity.sql" />
+    <Build Include="Views\SharedIdentifierSourceSystem.sql" />
+  </ItemGroup>
+</Project>

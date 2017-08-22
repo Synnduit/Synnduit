@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8B68BE3-7790-4CA3-88E3-D621967441F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Synnduit</RootNamespace>
+    <AssemblyName>Synnduit</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="BootstrapperFactory.cs" />
+    <Compile Include="Bridge.cs" />
+    <Compile Include="BridgeFactory.cs" />
+    <Compile Include="Configuration\ApplicationConfiguration.cs" />
+    <Compile Include="Configuration\BaseConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationBase.cs" />
+    <Compile Include="Configuration\ConfigurationLoader.cs" />
+    <Compile Include="Configuration\ConfigurationProvider.cs" />
+    <Compile Include="Configuration\ConfigurationSectionProvider.cs" />
+    <Compile Include="Configuration\GarbageCollectionLoggingConfigurationElement.cs" />
+    <Compile Include="Configuration\IConfigurationLoader.cs" />
+    <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Configuration\IConfigurationSectionProvider.cs" />
+    <Compile Include="Configuration\IGarbageCollectionLoggingConfiguration.cs" />
+    <Compile Include="Configuration\ILoggingConfigurationProvider.cs" />
+    <Compile Include="Configuration\IMigrationLoggingConfiguration.cs" />
+    <Compile Include="Configuration\IWritableConfigurationProvider.cs" />
+    <Compile Include="Configuration\LoggingConfigurationElement.cs" />
+    <Compile Include="Configuration\LoggingConfigurationProvider.cs" />
+    <Compile Include="Configuration\MigrationLoggingConfigurationElement.cs" />
+    <Compile Include="Configuration\RunConfiguration.cs" />
+    <Compile Include="Configuration\SegmentConfiguration.cs" />
+    <Compile Include="Configuration\SynnduitConfigurationSection.cs" />
+    <Compile Include="Configuration\WritableConfigurationProvider.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Deduplication\Cache.cs" />
+    <Compile Include="Deduplication\CaseInsensitiveComparisonHomogenizer.cs" />
+    <Compile Include="Deduplication\CompositeHomogenizer.cs" />
+    <Compile Include="Deduplication\DeduplicationResult.cs" />
+    <Compile Include="Deduplication\DeduplicationStatus.cs" />
+    <Compile Include="Deduplication\Deduplicator.cs" />
+    <Compile Include="Deduplication\DuplicationKeyRule.cs" />
+    <Compile Include="Deduplication\ICompositeHomogenizer.cs" />
+    <Compile Include="Deduplication\IDeduplicator.cs" />
+    <Compile Include="Deduplication\IgnoreDateTimeOffsetTimeHomogenizer.cs" />
+    <Compile Include="Deduplication\IgnoreDateTimeTimeHomogenizer.cs" />
+    <Compile Include="Deduplication\IgnoreLeadingAndTrailingWhitespaceHomogenizer.cs" />
+    <Compile Include="Deduplication\SharedSourceSystemIdentifierDuplicationRule.cs" />
+    <Compile Include="Deployment\AssetAssembler.cs" />
+    <Compile Include="Deployment\AssetExtractor.cs" />
+    <Compile Include="Deployment\AssetsDeploymentStep.cs" />
+    <Compile Include="Deployment\AssetSuite.cs" />
+    <Compile Include="Deployment\CombinedAsset.cs" />
+    <Compile Include="Deployment\DeploymentContextExtensions.cs" />
+    <Compile Include="Deployment\DeploymentExecutor.cs" />
+    <Compile Include="Deployment\DeploymentExecutorFactory.cs" />
+    <Compile Include="Deployment\EntityTypeAsset.cs" />
+    <Compile Include="Deployment\ExternalSystemAsset.cs" />
+    <Compile Include="Deployment\FeedAsset.cs" />
+    <Compile Include="Deployment\IAssetAssembler.cs" />
+    <Compile Include="Deployment\IAssetExtractor.cs" />
+    <Compile Include="Deployment\IDeploymentContext.cs" />
+    <Compile Include="Deployment\IDeploymentExecutor.cs" />
+    <Compile Include="Deployment\IDeploymentStep.cs" />
+    <Compile Include="Deployment\ISharedIdentifierSourceSystemsProvider.cs" />
+    <Compile Include="Deployment\SingularAsset.cs" />
+    <Compile Include="Deployment\TypeExtensions.cs" />
+    <Compile Include="DestinationSystemException.cs" />
+    <Compile Include="EntityIdentifierConverter.cs" />
+    <Compile Include="EntityTypeMetadata.cs" />
+    <Compile Include="EventHub.cs" />
+    <Compile Include="GarbageCollectionContextValidator.cs" />
+    <Compile Include="GarbageCollectionSegmentRunner.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="IBootstrapper.cs" />
+    <Compile Include="IBootstrapperFactory.cs" />
+    <Compile Include="IBridge.cs" />
+    <Compile Include="IBridgeFactory.cs" />
+    <Compile Include="IContextValidator.cs" />
+    <Compile Include="IEventHub.cs" />
+    <Compile Include="IEventReceiver.cs" />
+    <Compile Include="IGarbageCollectionContextValidator.cs" />
+    <Compile Include="IGarbageCollectionSegmentRunner.cs" />
+    <Compile Include="IGateway.cs" />
+    <Compile Include="IInvocableInitializer.cs" />
+    <Compile Include="IMetadataParser.cs" />
+    <Compile Include="IMigrationContextValidator.cs" />
+    <Compile Include="IMigrationSegmentRunner.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="InvocableInitializer.cs" />
+    <Compile Include="IOperationExecutive.cs" />
+    <Compile Include="IOperationScope.cs" />
+    <Compile Include="IParameterProvider.cs" />
+    <Compile Include="IParametersAssembler.cs" />
+    <Compile Include="IProcessor.cs" />
+    <Compile Include="IRunner.cs" />
+    <Compile Include="ISegmentRunner.cs" />
+    <Compile Include="IServiceProvider.cs" />
+    <Compile Include="IWritableContext.cs" />
+    <Compile Include="Logging\DatabaseLogger.cs" />
+    <Compile Include="Logging\EventDispatcher.cs" />
+    <Compile Include="Logging\IEventDispatcher.cs" />
+    <Compile Include="Logging\MessageLogger.cs" />
+    <Compile Include="Logging\OperationArgs.cs" />
+    <Compile Include="Logging\OperationCompletedArgs.cs" />
+    <Compile Include="Mappings\IMapping.cs" />
+    <Compile Include="Mappings\IMappingDataRepository.cs" />
+    <Compile Include="Mappings\IMappingRepository.cs" />
+    <Compile Include="Mappings\Mapper.cs" />
+    <Compile Include="Mappings\MappingDataObject.cs" />
+    <Compile Include="Mappings\MappingDataRepository.cs" />
+    <Compile Include="Mappings\MappingOrigin.cs" />
+    <Compile Include="Mappings\MappingRepository.cs" />
+    <Compile Include="Mappings\MappingSet.cs" />
+    <Compile Include="Mappings\MappingState.cs" />
+    <Compile Include="Mappings\SourceSystemEntityIdentity.cs" />
+    <Compile Include="EntityProperty.cs" />
+    <Compile Include="Merge\AllChangesMerger.cs" />
+    <Compile Include="Merge\IMerger.cs" />
+    <Compile Include="Merge\IMergerEntity.cs" />
+    <Compile Include="Merge\Merger.cs" />
+    <Compile Include="Merge\MergeStrategy.cs" />
+    <Compile Include="Merge\NewValuesOnlyMerger.cs" />
+    <Compile Include="MetadataParser.cs" />
+    <Compile Include="MetadataProvider.cs" />
+    <Compile Include="MigrationContextValidator.cs" />
+    <Compile Include="MigrationSegmentRunner.cs" />
+    <Compile Include="OperationExecutive.cs" />
+    <Compile Include="ParameterProvider.cs" />
+    <Compile Include="ParametersAssembler.cs" />
+    <Compile Include="Persistence\ISafeRepository.cs" />
+    <Compile Include="Persistence\SafeRepository.cs" />
+    <Compile Include="Preprocessing\EntityTypeTranslator.cs" />
+    <Compile Include="Preprocessing\IEntityTypeTranslator.cs" />
+    <Compile Include="Preprocessing\IPreprocessor.cs" />
+    <Compile Include="Preprocessing\NullableProxyPropertyValueSetter.cs" />
+    <Compile Include="Preprocessing\PreprocessedEntity.cs" />
+    <Compile Include="Preprocessing\Preprocessor.cs" />
+    <Compile Include="Preprocessing\ReferenceIdentifierResolver.cs" />
+    <Compile Include="Preprocessing\StringLengthEnforcer.cs" />
+    <Compile Include="Preprocessing\WhiteSpaceNullifier.cs" />
+    <Compile Include="Processor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenceIdentifierProperty.cs" />
+    <Compile Include="Runner.cs" />
+    <Compile Include="RunnerFactory.cs" />
+    <Compile Include="SafeMetadataProvider.cs" />
+    <Compile Include="Serialization\HashFunction.cs" />
+    <Compile Include="Serialization\HashingSerializer.cs" />
+    <Compile Include="Serialization\IHashFunction.cs" />
+    <Compile Include="Serialization\IHashingSerializer.cs" />
+    <Compile Include="Serialization\ISerializer.cs" />
+    <Compile Include="Serialization\Serializer.cs" />
+    <Compile Include="ServiceProvider.cs" />
+    <Compile Include="SourceSystemEntityIdentifier.cs" />
+    <Compile Include="ValueChange.cs" />
+    <Compile Include="WritableContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Synnduit.Core\Synnduit.Core.csproj">
+      <Project>{e7126341-835d-43b9-9c26-28346e842d4c}</Project>
+      <Name>Synnduit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Synnduit.Persistence\Synnduit.Persistence.csproj">
+      <Project>{2a63da61-396f-4874-8550-f9d59b723629}</Project>
+      <Name>Synnduit.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

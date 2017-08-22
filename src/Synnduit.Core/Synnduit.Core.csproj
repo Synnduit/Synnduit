@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7126341-835D-43B9-9C26-28346E842D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Synnduit</RootNamespace>
+    <AssemblyName>Synnduit.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentValidator.cs" />
+    <Compile Include="ContextExtensions.cs" />
+    <Compile Include="Deduplication\Duplicate.cs" />
+    <Compile Include="Deduplication\DuplicationKeyAttribute.cs" />
+    <Compile Include="Deduplication\DuplicationRule.cs" />
+    <Compile Include="Deduplication\Homogenizer.cs" />
+    <Compile Include="Deduplication\HomogenizerAttribute.cs" />
+    <Compile Include="Deduplication\ICache.cs" />
+    <Compile Include="Deduplication\ICacheFeed.cs" />
+    <Compile Include="Deduplication\ICacheIndex.cs" />
+    <Compile Include="Deduplication\IDuplicationRule.cs" />
+    <Compile Include="Deduplication\IHomogenizer.cs" />
+    <Compile Include="Deduplication\MatchWeight.cs" />
+    <Compile Include="DependencyContainer.cs" />
+    <Compile Include="Deduplication\CacheFeedAttribute.cs" />
+    <Compile Include="EntityTypeAttributeBase.cs" />
+    <Compile Include="EntityTypeDefinitionAttribute.cs" />
+    <Compile Include="Deduplication\DuplicationRuleAttribute.cs" />
+    <Compile Include="EntityTypeAttribute.cs" />
+    <Compile Include="Events\EventReceiverAttribute.cs" />
+    <Compile Include="ExternalSystemAttribute.cs" />
+    <Compile Include="FeedAttribute.cs" />
+    <Compile Include="Preprocessing\PreprocessorOperationAttribute.cs" />
+    <Compile Include="SharedSourceSystemIdentifiersAttribute.cs" />
+    <Compile Include="SinkAttribute.cs" />
+    <Compile Include="SourceSystemParametersAttribute.cs" />
+    <Compile Include="DestinationSystemIdentifierAttribute.cs" />
+    <Compile Include="EntityCollection.cs" />
+    <Compile Include="EntityCollectionExtensions.cs" />
+    <Compile Include="EntityDeletionOutcome.cs" />
+    <Compile Include="EntityIdentifier.cs" />
+    <Compile Include="EntityTransactionOutcome.cs" />
+    <Compile Include="Feed.cs" />
+    <Compile Include="GarbageCollectionBehavior.cs" />
+    <Compile Include="IContext.cs" />
+    <Compile Include="IDependencyContainer.cs" />
+    <Compile Include="IEntityCollection.cs" />
+    <Compile Include="IEntityIdentifierConverter.cs" />
+    <Compile Include="IEntityType.cs" />
+    <Compile Include="IExternalSystem.cs" />
+    <Compile Include="IFeed.cs" />
+    <Compile Include="IInitializable.cs" />
+    <Compile Include="IInitializationContext.cs" />
+    <Compile Include="IInitializer.cs" />
+    <Compile Include="IEntityTypeDefinition.cs" />
+    <Compile Include="IEntityTypeDefinitionContext.cs" />
+    <Compile Include="IMetadataProvider.cs" />
+    <Compile Include="ISafeMetadataProvider.cs" />
+    <Compile Include="ISink.cs" />
+    <Compile Include="Events\IValueChange.cs" />
+    <Compile Include="Events\ICachePopulatedArgs.cs" />
+    <Compile Include="Events\ICachePopulatingArgs.cs" />
+    <Compile Include="Events\IDeletionArgs.cs" />
+    <Compile Include="Events\IDeletionEntityLoadedArgs.cs" />
+    <Compile Include="Events\IDeletionProcessedArgs.cs" />
+    <Compile Include="Events\IDeletionProcessingArgs.cs" />
+    <Compile Include="Events\IEventReceiver.cs" />
+    <Compile Include="Events\IGarbageCollectionInitializedArgs.cs" />
+    <Compile Include="Events\IGarbageCollectionInitializingArgs.cs" />
+    <Compile Include="Events\IInitializationArgs.cs" />
+    <Compile Include="Events\IInitializedArgs.cs" />
+    <Compile Include="Events\IInitializingArgs.cs" />
+    <Compile Include="Events\ILoadedArgs.cs" />
+    <Compile Include="Events\ILoadingArgs.cs" />
+    <Compile Include="Events\IEntityTypeEventReceiver.cs" />
+    <Compile Include="Events\ILogMessage.cs" />
+    <Compile Include="Events\IMappingsCachedArgs.cs" />
+    <Compile Include="Events\IMappingsCachingArgs.cs" />
+    <Compile Include="Events\IMessageLogger.cs" />
+    <Compile Include="Events\IOperationArgs.cs" />
+    <Compile Include="Events\IOperationCompletedArgs.cs" />
+    <Compile Include="Events\IOrphanMappingProcessedArgs.cs" />
+    <Compile Include="Events\IOrphanMappingsProcessingArgs.cs" />
+    <Compile Include="Events\IProcessedArgs.cs" />
+    <Compile Include="Events\IProcessingArgs.cs" />
+    <Compile Include="Events\ISegmentExecutedArgs.cs" />
+    <Compile Include="Events\ISegmentExecutingArgs.cs" />
+    <Compile Include="Events\EventReceiver.cs" />
+    <Compile Include="Events\MessageType.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="EntityPropertyAttribute.cs" />
+    <Compile Include="OrphanMappingBehavior.cs" />
+    <Compile Include="Preprocessing\EntityOrigin.cs" />
+    <Compile Include="Preprocessing\IPreprocessorEntity.cs" />
+    <Compile Include="Preprocessing\IPreprocessorOperation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenceIdentifierAttribute.cs" />
+    <Compile Include="SegmentType.cs" />
+    <Compile Include="Events\ISerializedEntity.cs" />
+    <Compile Include="SourceSystemIdentifierAttribute.cs" />
+    <Compile Include="SynnduitException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

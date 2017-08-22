@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[SerializedEntity]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[DataHash] VARCHAR(24) NOT NULL,
+	[Data] VARBINARY(MAX) NOT NULL,
+	[Label] NVARCHAR(256) NOT NULL,
+	CONSTRAINT [PK_SerializedEntity] PRIMARY KEY NONCLUSTERED ([Id]),
+	INDEX [IDX_SerializedEntity_DataHash] NONCLUSTERED ([DataHash])
+)
