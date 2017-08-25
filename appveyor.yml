@@ -15,4 +15,4 @@ build:
   verbosity: minimal
 
 test-script:
-  cmd: vstest.console /logger:Appveyor "C:\projects\synnduit\test\Synnduit.Core.Test\bin\x64\Release\Synnduit.Core.Test.dll" "C:\projects\synnduit\test\Synnduit.Test\bin\x64\Release\Synnduit.Test.dll" /platform:x64
+  cmd: vstest.console /logger:Appveyor C:\projects\synnduit\test\Synnduit.Core.Test\bin\x64\Release\Synnduit.Core.Test.dll C:\projects\synnduit\test\Synnduit.Test\bin\x64\Release\Synnduit.Test.dll /platform:x64
