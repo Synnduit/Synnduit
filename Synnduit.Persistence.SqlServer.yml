@@ -1,0 +1,14 @@
+image: Visual Studio 2017
+platform:
+  - x86
+  - x64
+configuration: Release
+
+# Restore Nuget packages
+before_build:
+  - nuget restore Synnduit.Persistence.SqlServer.sln
+
+# Build
+build:
+  project: Synnduit.Persistence.SqlServer.sln
+  verbosity: minimal
