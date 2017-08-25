@@ -6,4 +6,5 @@ before_build:
 
 # Build
 build:
+  project: Synnduit.sln
   verbosity: minimal
