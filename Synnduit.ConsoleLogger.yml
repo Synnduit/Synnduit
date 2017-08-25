@@ -17,4 +17,4 @@ build:
 test_script:
   ps: >-
     vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor `
-      "C:\projects\synnduit.consolelogger\test\Synnduit.Core.Test\bin\$env:PLATFORM\Release\Synnduit.Core.Test.dll"
+      "C:\projects\synnduit-vsb11\test\Synnduit.Core.Test\bin\$env:PLATFORM\Release\Synnduit.Core.Test.dll"
