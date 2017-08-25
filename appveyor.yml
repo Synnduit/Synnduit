@@ -22,5 +22,5 @@ test_script:
     }
     else
     {
-      vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor "C:\projects\synnduit\test\Synnduit.Core.Test\bin\x86\Release\Synnduit.Core.Test.dll" "C:\projects\synnduit\test\Synnduit.Test\bin\x86\Release\Synnduit.Test.dll"
+      vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor '**\*.Test.dll'
     }
