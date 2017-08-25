@@ -9,6 +9,7 @@ configuration: Release
 before_build:
   - nuget restore Synnduit.sln
 
+
 # Build
 build:
   project: Synnduit.sln
