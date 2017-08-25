@@ -13,7 +13,3 @@ before_build:
 build:
   project: Synnduit.sln
   verbosity: minimal
-
-# Test
-test_script:
-  - cmd: "vstest.console /logger:Appveyor /platform:%PLATFORM%"
