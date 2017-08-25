@@ -2,12 +2,11 @@
 platform: x64
 configuration: Release
 
+# Restore Nuget packages
+before_build:
+  - nuget restore Synnduit.sln
+
 # Build
 build:
   project: Synnduit.sln
   verbosity: minimal
-
-# Restore Nuget packages
-before_build:
-  - nuget restore
-  
