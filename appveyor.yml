@@ -16,4 +16,4 @@ build:
 
 # Test
 test_script:
-  - cmd: vstest.console /logger:Appveyor /platform:"%$env:PLATFORM%" **\*.tests.dll
+  - cmd: vstest.console /logger:Appveyor /platform:%PLATFORM% **\*.tests.dll
