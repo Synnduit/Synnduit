@@ -15,4 +15,4 @@ build:
   verbosity: minimal
 
 test_script:
-  ps: vstest.console /logger:Appveyor /platform:"$env:PLATFORM"
+  ps: vstest.console /logger:Appveyor /platform:$env:PLATFORM
