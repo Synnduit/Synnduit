@@ -15,12 +15,4 @@ build:
   verbosity: minimal
 
 test_script:
-  ps: >-
-    if($env:PLATFORM -eq "x64")
-    {
-       vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor "C:\projects\synnduit\test\Synnduit.Core.Test\bin\$env:PLATFORM\Release\Synnduit.Core.Test.dll" "C:\projects\synnduit\test\Synnduit.Test\bin\$env:PLATFORM\Release\Synnduit.Test.dll"
-    }
-    else
-    {
-      vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor "C:\projects\synnduit\test\Synnduit.Core.Test\bin\$env:PLATFORM\Release\Synnduit.Core.Test.dll" "C:\projects\synnduit\test\Synnduit.Test\bin\$env:PLATFORM\Release\Synnduit.Test.dll"
-    }
+  ps: vstest.console /Platform:$env:PLATFORM /inIsolation /logger:Appveyor "C:\projects\synnduit\test\Synnduit.Core.Test\bin\$env:PLATFORM\Release\Synnduit.Core.Test.dll" "C:\projects\synnduit\test\Synnduit.Test\bin\$env:PLATFORM\Release\Synnduit.Test.dll"
