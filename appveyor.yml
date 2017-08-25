@@ -1,3 +1,4 @@
+project: Synnduit.sln
 configuration: Release
 
 # Restore Nuget packages
@@ -6,5 +7,4 @@ before_build:
 
 # Build
 build:
-  project: Synnduit.sln
   verbosity: minimal
