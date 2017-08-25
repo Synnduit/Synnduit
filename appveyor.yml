@@ -14,5 +14,5 @@ build:
   project: Synnduit.sln
   verbosity: minimal
 
-test-script:
+test_script:
   ps: vstest.console /logger:Appveyor /platform:"$env:PLATFORM"
