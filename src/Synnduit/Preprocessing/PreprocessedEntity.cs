@@ -15,12 +15,12 @@
         /// <summary>
         /// Gets the entity that has been preprocessed.
         /// </summary>
-        public TEntity Entity { get; private set; }
+        public TEntity Entity { get; }
 
         /// <summary>
         /// Gets a value indicating whether the entity was rejected by a preprocessor
         /// operation.
         /// </summary>
-        public bool IsRejected { get; private set; }
+        public bool IsRejected { get; }
     }
 }

@@ -412,9 +412,9 @@ namespace Synnduit
                 this.Bravo = bravo;
             }
 
-            public int Alpha { get; private set; }
+            public int Alpha { get; }
 
-            public char Bravo { get; private set; }
+            public char Bravo { get; }
 
             public override int GetHashCode()
             {
@@ -458,9 +458,9 @@ namespace Synnduit
                 this.Echo = echo;
             }
 
-            public string Delta { get; private set; }
+            public string Delta { get; }
 
-            public bool Echo { get; private set; }
+            public bool Echo { get; }
 
             public override int GetHashCode()
             {

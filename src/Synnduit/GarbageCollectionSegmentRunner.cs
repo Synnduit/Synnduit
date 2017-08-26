@@ -235,11 +235,11 @@ namespace Synnduit
                     this.InactiveCreated = inactiveCreated;
                 }
 
-                public IEnumerable<EntityIdentifier> Active { get; private set; }
+                public IEnumerable<EntityIdentifier> Active { get; }
 
-                public IEnumerable<EntityIdentifier> Inactive { get; private set; }
+                public IEnumerable<EntityIdentifier> Inactive { get; }
 
-                public IEnumerable<EntityIdentifier> InactiveCreated { get; private set; }
+                public IEnumerable<EntityIdentifier> InactiveCreated { get; }
             }
         }
 

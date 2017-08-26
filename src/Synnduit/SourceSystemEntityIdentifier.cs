@@ -17,12 +17,12 @@ namespace Synnduit
         /// <summary>
         /// Gets the ID of the source system.
         /// </summary>
-        public Guid SourceSystemId { get; private set; }
+        public Guid SourceSystemId { get; }
 
         /// <summary>
         /// Gets the ID that uniquely identifies the entity within the source system.
         /// </summary>
-        public EntityIdentifier EntityId { get; private set; }
+        public EntityIdentifier EntityId { get; }
 
         public override int GetHashCode()
         {

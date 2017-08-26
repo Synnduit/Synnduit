@@ -614,9 +614,9 @@ namespace Synnduit.Deployment
                     this.SourceSystemId = sourceSystemId;
                 }
 
-                public Guid EntityTypeId { get; private set; }
+                public Guid EntityTypeId { get; }
 
-                public Guid SourceSystemId { get; private set; }
+                public Guid SourceSystemId { get; }
 
                 public override int GetHashCode()
                 {
@@ -652,9 +652,9 @@ namespace Synnduit.Deployment
                 this.Name = trimmedName;
             }
 
-            public Guid Id { get; private set; }
+            public Guid Id { get; }
 
-            public string Name { get; private set; }
+            public string Name { get; }
         }
 
         private class EntityType : Persistence.IEntityType
@@ -693,21 +693,21 @@ namespace Synnduit.Deployment
                 this.IsDuplicable = isDuplicable;
             }
 
-            public Guid Id { get; private set; }
+            public Guid Id { get; }
 
-            public Guid DestinationSystemId { get; private set; }
+            public Guid DestinationSystemId { get; }
 
-            public string Name { get; private set; }
+            public string Name { get; }
 
-            public string TypeName { get; private set; }
+            public string TypeName { get; }
 
-            public string SinkTypeFullName { get; private set; }
+            public string SinkTypeFullName { get; }
 
-            public string CacheFeedTypeFullName { get; private set; }
+            public string CacheFeedTypeFullName { get; }
 
-            public bool IsMutable { get; private set; }
+            public bool IsMutable { get; }
 
-            public bool IsDuplicable { get; private set; }
+            public bool IsDuplicable { get; }
         }
 
         private class SharedSourceSystemIdentifier : ISharedSourceSystemIdentifier
@@ -720,11 +720,11 @@ namespace Synnduit.Deployment
                 this.GroupNumber = groupNumber;
             }
 
-            public Guid EntityTypeId { get; private set; }
+            public Guid EntityTypeId { get; }
 
-            public Guid SourceSystemId { get; private set; }
+            public Guid SourceSystemId { get; }
 
-            public int GroupNumber { get; private set; }
+            public int GroupNumber { get; }
         }
 
         private class SharedSourceSystemIdentifierGroup
@@ -755,9 +755,9 @@ namespace Synnduit.Deployment
                 this.SourceSystemIds = sourceSystemIds;
             }
 
-            public Guid EntityTypeId { get; private set; }
+            public Guid EntityTypeId { get; }
 
-            public IEnumerable<Guid> SourceSystemIds { get; private set; }
+            public IEnumerable<Guid> SourceSystemIds { get; }
         }
 
         private class Feed : IFeed
@@ -780,11 +780,11 @@ namespace Synnduit.Deployment
                 this.FeedTypeFullName = feedType.GetStrippedFullName();
             }
 
-            public Guid EntityTypeId { get; private set; }
+            public Guid EntityTypeId { get; }
 
-            public Guid SourceSystemId { get; private set; }
+            public Guid SourceSystemId { get; }
 
-            public string FeedTypeFullName { get; private set; }
+            public string FeedTypeFullName { get; }
 
             public override int GetHashCode()
             {
@@ -811,11 +811,11 @@ namespace Synnduit.Deployment
                 this.SourceSystemId = sourceSystemId;
             }
 
-            public Guid? DestinationSystemId { get; private set; }
+            public Guid? DestinationSystemId { get; }
 
-            public Guid? EntityTypeId { get; private set; }
+            public Guid? EntityTypeId { get; }
 
-            public Guid? SourceSystemId { get; private set; }
+            public Guid? SourceSystemId { get; }
 
             public override int GetHashCode()
             {
@@ -856,17 +856,17 @@ namespace Synnduit.Deployment
                 this.Value = value;
             }
 
-            public Guid Id { get; private set; }
+            public Guid Id { get; }
 
-            public Guid? DestinationSystemId { get; private set; }
+            public Guid? DestinationSystemId { get; }
 
-            public Guid? EntityTypeId { get; private set; }
+            public Guid? EntityTypeId { get; }
 
-            public Guid? SourceSystemId { get; private set; }
+            public Guid? SourceSystemId { get; }
 
-            public string Name { get; private set; }
+            public string Name { get; }
 
-            public string Value { get; private set; }
+            public string Value { get; }
         }
     }
 }

@@ -437,7 +437,7 @@ namespace Synnduit.Events
                 this.Outcome = outcome;
             }
 
-            public int Outcome { get; private set; }
+            public int Outcome { get; }
         }
 
         private class MappingEntityTransaction :
@@ -450,7 +450,7 @@ namespace Synnduit.Events
                 this.MappingId = mappingId;
             }
 
-            public Guid MappingId { get; private set; }
+            public Guid MappingId { get; }
         }
 
         private class IdentityEntityTransaction :
@@ -468,7 +468,7 @@ namespace Synnduit.Events
                     entityTypeId, sourceSystemId, sourceSystemEntityId);
             }
 
-            public ISourceSystemEntityIdentity Identity { get; private set; }
+            public ISourceSystemEntityIdentity Identity { get; }
         }
 
         private class SerializedEntity : Persistence.ISerializedEntity
@@ -480,11 +480,11 @@ namespace Synnduit.Events
                 this.Label = label;
             }
 
-            public string DataHash { get; private set; }
+            public string DataHash { get; }
 
-            public byte[] Data { get; private set; }
+            public byte[] Data { get; }
 
-            public string Label { get; private set; }
+            public string Label { get; }
         }
 
         private class OperationSerializedEntity : IOperationSerializedEntity
@@ -496,9 +496,9 @@ namespace Synnduit.Events
                 this.Entity = entity;
             }
 
-            public IOperation Operation { get; private set; }
+            public IOperation Operation { get; }
 
-            public Persistence.ISerializedEntity Entity { get; private set; }
+            public Persistence.ISerializedEntity Entity { get; }
         }
 
         private class PersistenceValueChange : Persistence.IValueChange
@@ -517,15 +517,15 @@ namespace Synnduit.Events
                 this.NewValue = newValue;
             }
 
-            public Guid Id { get; private set; }
+            public Guid Id { get; }
 
-            public Guid MappingEntityTransactionId { get; private set; }
+            public Guid MappingEntityTransactionId { get; }
 
-            public string ValueName { get; private set; }
+            public string ValueName { get; }
 
-            public string PreviousValue { get; private set; }
+            public string PreviousValue { get; }
 
-            public string NewValue { get; private set; }
+            public string NewValue { get; }
         }
 
         private class IdentityOperationSourceSystemEntity :
@@ -544,11 +544,11 @@ namespace Synnduit.Events
                 this.Entity = entity;
             }
 
-            public ISourceSystemEntityIdentity Identity { get; private set; }
+            public ISourceSystemEntityIdentity Identity { get; }
 
-            public IOperation Operation { get; private set; }
+            public IOperation Operation { get; }
 
-            public Persistence.ISerializedEntity Entity { get; private set; }
+            public Persistence.ISerializedEntity Entity { get; }
         }
 
         private class EntityDeletion : Operation, IEntityDeletion
@@ -565,11 +565,11 @@ namespace Synnduit.Events
                 this.Outcome = outcome;
             }
 
-            public Guid EntityTypeId { get; private set; }
+            public Guid EntityTypeId { get; }
 
-            public string DestinationSystemEntityId { get; private set; }
+            public string DestinationSystemEntityId { get; }
 
-            public int Outcome { get; private set; }
+            public int Outcome { get; }
         }
 
         private class Message : IMessage
@@ -581,11 +581,11 @@ namespace Synnduit.Events
                 this.Text = text;
             }
 
-            public int Type { get; private set; }
+            public int Type { get; }
 
-            public string TextHash { get; private set; }
+            public string TextHash { get; }
 
-            public string Text { get; private set; }
+            public string Text { get; }
 
             public override int GetHashCode()
             {
@@ -617,11 +617,11 @@ namespace Synnduit.Events
                 this.Message = message;
             }
 
-            public ISourceSystemEntityIdentity Identity { get; private set; }
+            public ISourceSystemEntityIdentity Identity { get; }
 
-            public IOperation Operation { get; private set; }
+            public IOperation Operation { get; }
 
-            public IMessage Message { get; private set; }
+            public IMessage Message { get; }
         }
 
         private class OperationMessage : IOperationMessage
@@ -632,9 +632,9 @@ namespace Synnduit.Events
                 this.Message = message;
             }
 
-            public IOperation Operation { get; private set; }
+            public IOperation Operation { get; }
 
-            public IMessage Message { get; private set; }
+            public IMessage Message { get; }
         }
     }
 }

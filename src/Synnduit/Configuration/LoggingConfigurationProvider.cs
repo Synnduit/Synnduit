@@ -128,16 +128,15 @@ namespace Synnduit.Configuration
                     MigrationLoggingConfigurationElement.DefaultAlwaysLogMessagesValue);
             }
 
-            public IEnumerable<EntityTransactionOutcome> ExcludedOutcomes
-            { get; private set; }
+            public IEnumerable<EntityTransactionOutcome> ExcludedOutcomes { get; }
 
-            public bool SourceSystemEntity { get; private set; }
+            public bool SourceSystemEntity { get; }
 
-            public bool DestinationSystemEntity { get; private set; }
+            public bool DestinationSystemEntity { get; }
 
-            public bool ValueChanges { get; private set; }
+            public bool ValueChanges { get; }
 
-            public bool AlwaysLogMessages { get; private set; }
+            public bool AlwaysLogMessages { get; }
         }
 
         private class GarbageCollectionLoggingConfiguration :
@@ -156,12 +155,11 @@ namespace Synnduit.Configuration
                     .DefaultAlwaysLogMessagesValue);
             }
 
-            public IEnumerable<EntityDeletionOutcome> ExcludedOutcomes
-            { get; private set;}
+            public IEnumerable<EntityDeletionOutcome> ExcludedOutcomes { get; }
 
-            public bool Entity { get; private set; }
+            public bool Entity { get; }
 
-            public bool AlwaysLogMessages { get; private set; }
+            public bool AlwaysLogMessages { get; }
         }
     }
 }

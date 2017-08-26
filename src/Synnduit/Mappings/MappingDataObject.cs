@@ -27,17 +27,17 @@ namespace Synnduit.Mappings
         /// <summary>
         /// Gets the ID of the mapping.
         /// </summary>
-        public Guid MappingId { get; private set; }
+        public Guid MappingId { get; }
 
         /// <summary>
         /// Gets the ID that uniquely identifies the entity in the source system.
         /// </summary>
-        public EntityIdentifier SourceSystemEntityId { get; private set; }
+        public EntityIdentifier SourceSystemEntityId { get; }
 
         /// <summary>
         /// Gets the ID that uniquely identifies the entity in the destination system.
         /// </summary>
-        public EntityIdentifier DestinationSystemEntityId { get; private set; }
+        public EntityIdentifier DestinationSystemEntityId { get; }
 
         /// <summary>
         /// Gets or sets the hash of the serialized entity data.
@@ -47,7 +47,7 @@ namespace Synnduit.Mappings
         /// <summary>
         /// Gets the origin of the mapping.
         /// </summary>
-        public MappingOrigin Origin { get; private set; }
+        public MappingOrigin Origin { get; }
 
         /// <summary>
         /// Gets or sets the state of the mapping.

@@ -232,11 +232,11 @@ namespace Synnduit
                 this.RunConfiguration = runConfiguration;
             }
 
-            public BaseConfiguration BaseConfiguration { get; private set; }
+            public BaseConfiguration BaseConfiguration { get; }
 
-            public ApplicationConfiguration ApplicationConfiguration { get; private set; }
+            public ApplicationConfiguration ApplicationConfiguration { get; }
 
-            public RunConfiguration RunConfiguration { get; private set; }
+            public RunConfiguration RunConfiguration { get; }
         }
 
         private class ConfigurationProvider : IConfigurationProvider

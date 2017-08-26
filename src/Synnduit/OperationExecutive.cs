@@ -93,7 +93,7 @@ namespace Synnduit
                 get { return this.logMessages; }
             }
 
-            public IDictionary<string, object> Data { get; private set; }
+            public IDictionary<string, object> Data { get; }
 
             public void UpdateIdentityCorrelationId(EntityIdentifier sourceSystemEntityId)
             {
@@ -115,9 +115,9 @@ namespace Synnduit
                 this.transactionScope.Complete();
             }
 
-            public Guid Id { get; private set; }
+            public Guid Id { get; }
 
-            public DateTimeOffset TimeStamp { get; private set; }
+            public DateTimeOffset TimeStamp { get; }
 
             public void Log(MessageType type, string message)
             {
@@ -205,9 +205,9 @@ namespace Synnduit
                     entityTypeId, sourceSystemId, sourceSystemEntityId);
             }
 
-            public Guid OperationId { get; private set; }
+            public Guid OperationId { get; }
 
-            public ISourceSystemEntityIdentity Identity { get; private set; }
+            public ISourceSystemEntityIdentity Identity { get; }
         }
     }
 }

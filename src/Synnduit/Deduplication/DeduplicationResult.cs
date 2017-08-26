@@ -36,19 +36,19 @@ namespace Synnduit.Deduplication
         /// <summary>
         /// Gets the status of the deduplication process.
         /// </summary>
-        public DeduplicationStatus Status { get; private set; }
+        public DeduplicationStatus Status { get; }
 
         /// <summary>
         /// Gets the destination system ID of the entity that the deduplicated entity is
         /// a duplicate of; this value will only be set if Status is DuplicateFound.
         /// </summary>
-        public EntityIdentifier DuplicateId { get; private set; }
+        public EntityIdentifier DuplicateId { get; }
 
         /// <summary>
         /// Gets the collection of destination system entities that the deduplicated entity
         /// might be a duplicate of; these entities should be referred for manual
         /// inspection; this value will only be set if Status is CandidateDuplicatesFound.
         /// </summary>
-        public IEnumerable<Duplicate> CandidateDuplicates { get; private set; }
+        public IEnumerable<Duplicate> CandidateDuplicates { get; }
     }
 }

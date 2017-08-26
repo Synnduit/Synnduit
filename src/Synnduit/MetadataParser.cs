@@ -513,9 +513,9 @@ namespace Synnduit
                 this.Attribute = attribute;
             }
 
-            public PropertyInfo Property { get; private set; }
+            public PropertyInfo Property { get; }
 
-            public TAttribute Attribute { get; private set; }
+            public TAttribute Attribute { get; }
         }
     }
 }

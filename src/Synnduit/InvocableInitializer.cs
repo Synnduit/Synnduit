@@ -130,13 +130,13 @@ namespace Synnduit
                     : new Dictionary<string, object>();
             }
 
-            public IInitializable Instance { get; private set; }
+            public IInitializable Instance { get; }
 
-            public bool SuppressEvents { get; private set; }
+            public bool SuppressEvents { get; }
 
-            public string Message { get; private set; }
+            public string Message { get; }
 
-            public IDictionary<string, object> Data { get; private set; }
+            public IDictionary<string, object> Data { get; }
         }
 
         private class InitializationContext : IInitializationContext

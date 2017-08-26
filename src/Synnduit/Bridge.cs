@@ -115,9 +115,9 @@ namespace Synnduit
                 this.SegmentRunnerType = segmentRunnerType;
             }
 
-            public Type ContextValidatorType { get; private set; }
+            public Type ContextValidatorType { get; }
 
-            public Type SegmentRunnerType { get; private set; }
+            public Type SegmentRunnerType { get; }
         }
     }
 }

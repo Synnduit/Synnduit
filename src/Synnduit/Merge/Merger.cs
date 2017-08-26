@@ -108,9 +108,9 @@ namespace Synnduit.Merge
                 this.Properties = new List<EntityProperty>();
             }
 
-            public string GroupName { get; private set; }
+            public string GroupName { get; }
 
-            public List<EntityProperty> Properties { get; private set; }
+            public List<EntityProperty> Properties { get; }
 
             public bool HasValue(TEntity entity)
             {
