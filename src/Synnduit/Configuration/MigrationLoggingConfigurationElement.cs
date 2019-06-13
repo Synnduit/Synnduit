@@ -41,10 +41,10 @@ namespace Synnduit.Configuration
 
         /// <summary>
         /// Gets or sets a comma-separated list of
-        /// <see cref="Logging.EntityTransactionOutcome"/> values identifying entity
-        /// transactions that should be excluded from logging; the default is
-        /// <see cref="Logging.EntityTransactionOutcome.Skipped" /> and
-        /// <see cref="Logging.EntityTransactionOutcome.NoChangesDetected"/>.
+        /// <see cref="EntityTransactionOutcome"/> values identifying entity transactions
+        /// that should be excluded from logging; the default is
+        /// <see cref="EntityTransactionOutcome.Skipped" /> and
+        /// <see cref="EntityTransactionOutcome.NoChangesDetected"/>.
         /// </summary>
         [ConfigurationProperty(
             "excludedOutcomes",

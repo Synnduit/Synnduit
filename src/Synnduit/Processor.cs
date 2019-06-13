@@ -106,7 +106,7 @@ namespace Synnduit
                 this.DestinationSystemEntity,
                 this.Mapping?.DestinationSystemEntityId,
                 outcome,
-                new SerializedEntity(this.SerializedSourceSystemEntity),
+                SerializedEntity.Create(this.SerializedSourceSystemEntity),
                 this.ValueChanges);
         }
 
@@ -503,9 +503,17 @@ namespace Synnduit
 
         private class SerializedEntity : ISerializedEntity
         {
+            public static SerializedEntity Create(
+                Persistence.ISerializedEntity serializedEntity)
+            {
+                return serializedEntity != null
+                    ? new SerializedEntity(serializedEntity)
+                    : null;
+            }
+
             private readonly Persistence.ISerializedEntity serializedEntity;
 
-            public SerializedEntity(Persistence.ISerializedEntity serializedEntity)
+            private SerializedEntity(Persistence.ISerializedEntity serializedEntity)
             {
                 this.serializedEntity = serializedEntity;
             }

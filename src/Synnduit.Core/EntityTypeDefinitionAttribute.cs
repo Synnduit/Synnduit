@@ -19,6 +19,7 @@ namespace Synnduit
         /// <param name="id">
         /// The ID of the entity type; the value must be parsable as a <see cref="Guid" />.
         /// </param>
+        /// <param name="entityType">The type representing the entity.</param>
         /// <param name="destinationSystem">
         /// The type representing the entity type's parent destination system (i.e., the
         /// class that the <see cref="ExternalSystemAttribute" /> attribute is applied to).

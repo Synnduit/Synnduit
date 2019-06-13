@@ -580,7 +580,6 @@ namespace Synnduit.Persistence.SqlServer
         /// <param name="sourceSystemEntityId">
         /// The ID that uniquely identifies the entity in the source system.
         /// </param>
-        /// <param name="newCorrelationId">The new last access correlation ID.</param>
         public void UpdateIdentityCorrelationId(
             Guid operationId,
             Guid entityTypeId,

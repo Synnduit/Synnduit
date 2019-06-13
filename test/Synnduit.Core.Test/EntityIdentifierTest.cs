@@ -247,8 +247,9 @@ namespace Synnduit
         [TestMethod]
         public void Constructor_Does_Not_Throw_Exception_For_Maximum_Identifier_Length()
         {
-            AssertionExtensions.ShouldNotThrow(
-                () => new EntityIdentifier(new string('1', EntityIdentifier.MaxLength)));
+            Action constructorInvocation =
+                () => new EntityIdentifier(new string('1', EntityIdentifier.MaxLength));
+            constructorInvocation.Should().NotThrow();
         }
 
         [TestMethod]
