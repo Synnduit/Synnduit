@@ -2,7 +2,6 @@
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reflection;
-using Synnduit.Deployment;
 using Synnduit.Properties;
 
 namespace Synnduit.Deduplication
@@ -28,6 +27,7 @@ namespace Synnduit.Deduplication
 
         [ImportingConstructor]
         internal DuplicationKeyRule(
+            IContext context,
             ISafeMetadataProvider<TEntity> safeMetadataProvider,
             IMetadataParser<TEntity> metadataParser,
             ICache<TEntity> cache,
@@ -37,7 +37,7 @@ namespace Synnduit.Deduplication
             this.metadataParser = metadataParser;
             this.cache = cache;
             this.indices = new IndexWrapper[0];
-            if(this.IsEntityTypeSupported())
+            if(this.IsEntityTypeSupported(context))
             {
                 initializer.Register(
                     new Initializer(this),
@@ -69,12 +69,11 @@ namespace Synnduit.Deduplication
                 .Select(identifier => new Duplicate(identifier, MatchWeight.Positive));
         }
 
-        private bool IsEntityTypeSupported()
-        {
-            return
-                typeof(TEntity)
-                .GetCustomAttribute<EntityTypeAttribute>() != null;
-        }
+        private bool IsEntityTypeSupported(IContext context) =>
+            context
+            .EntityTypes
+            .Where(et => et.Type == typeof(TEntity))
+            .Count() > 0;
 
         private class Initializer : IInitializable
         {
