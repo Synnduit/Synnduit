@@ -53,7 +53,7 @@ namespace Synnduit.Mappings
             return (
                 $"{this.entityTypeId:d}_" +
                 $"{this.sourceSystemId:d}_" +
-                $"{this.sourceSystemEntityId}"
+                $"{this.sourceSystemEntityId.ToString().ToLower()}"
                 ).GetHashCode();
         }
 
