@@ -1,9 +1,0 @@
-﻿CREATE TABLE [dbo].[Message]
-(
-	[Id] UNIQUEIDENTIFIER NOT NULL,
-	[Type] INT NOT NULL,
-	[TextHash] VARCHAR(24) NOT NULL,
-	[Text] NVARCHAR(MAX) NOT NULL,
-	CONSTRAINT [PK_Message] PRIMARY KEY NONCLUSTERED ([Id]),
-	INDEX [IDX_Message_TypeTextHash] NONCLUSTERED ([Type], [TextHash])
-)
