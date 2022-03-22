@@ -11,7 +11,9 @@ try
 {
     var runName = GetRunName(args);
     var configuration =
-        new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        new ConfigurationBuilder()
+        .AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"))
+        .Build();
     DeploymentExecutorFactory
         .CreateDeploymentExecutor(configuration, typeof(Repository).Assembly)
         .Deploy();
