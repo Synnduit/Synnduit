@@ -21,7 +21,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Synnduit.Engine" Version="0.3.0" />
     <PackageReference Include="Synnduit.Persistence.SqlServer" Version="0.3.0" />
-    <PackageReference Include="Synnduit.ConsoleLogger" Version="0.3.0" />
+    <PackageReference Include="Synnduit.ConsoleLogger" Version="0.3.1" />
   </ItemGroup>
 
   <ItemGroup>
