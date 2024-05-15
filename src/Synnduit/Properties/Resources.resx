@@ -117,7 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NotValidGuidForUserSecretId" xml:space="preserve">
+    <value>The specified SecretId for your Secret.json was not a valid guid. </value>
+    <comment>Secret.json overrides appsetting.json to extract out passwords/secrets etc. A valid SecretId is required. This parameter is optional. </comment>
+  </data>
   <data name="RunNameExpected" xml:space="preserve">
-    <value>Please specify the run name. (Exactly one command line argument expected.)</value>
+    <value>Please specify the run name. (Exactly one command line argument expected along with an optional SecretId.)</value>
   </data>
 </root>

@@ -10,9 +10,11 @@ using System.Reflection;
 try
 {
     var runName = GetRunName(args);
+    var secretId = GetSecretId(args);
     var configuration =
         new ConfigurationBuilder()
         .AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"))
+        .AddUserSecrets(secretId, true)
         .Build();
     DeploymentExecutorFactory
         .CreateDeploymentExecutor(configuration, typeof(Repository).Assembly)
@@ -46,15 +48,34 @@ catch (Exception exception)
 static string GetRunName(string[] args)
 {
     string runName = null;
-    if (args.Length == 1)
+    if (args.Length >= 1)
     {
-        runName = args.Single().Trim();
+        runName = args.GetValue(0).ToString().Trim();
     }
     if (string.IsNullOrEmpty(runName))
     {
         throw new InvalidOperationException(Resources.RunNameExpected);
     }
     return runName;
+}
+
+static string GetSecretId(string[] args)
+{
+    const string defaultSecretId = "2ca80c47-9bbf-4b07-8fca-3912a7e23a12";
+    string secretId = null;
+    if (args.Length > 1)
+    {
+        secretId = args.GetValue(1).ToString().Trim();
+    }
+    if (string.IsNullOrEmpty(secretId))
+    {
+        return defaultSecretId;
+    }
+    if (Guid.TryParse(secretId, out _))
+    {
+        return secretId;
+    }
+    throw new InvalidOperationException(Resources.NotValidGuidForUserSecretId);
 }
 
 static void PrintMultiPartExceptionDetails(
