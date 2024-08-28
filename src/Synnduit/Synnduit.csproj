@@ -19,9 +19,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-    <PackageReference Include="Synnduit.Engine" Version="0.7.0" />
-    <PackageReference Include="Synnduit.Persistence.SqlServer" Version="0.7.0" />
-    <PackageReference Include="Synnduit.ConsoleLogger" Version="0.7.1" />
+    <PackageReference Include="Synnduit.Engine" Version="0.8.0" />
+    <PackageReference Include="Synnduit.Persistence.SqlServer" Version="0.8.0" />
+    <PackageReference Include="Synnduit.ConsoleLogger" Version="0.8.0" />
     <PackageReference Include="System.Security.Permissions" Version="8.0.0" />
 	<PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
