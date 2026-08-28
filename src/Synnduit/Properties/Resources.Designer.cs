@@ -61,7 +61,16 @@ namespace Synnduit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please specify the run name. (Exactly one command line argument expected.).
+        ///   Looks up a localized string similar to The specified SecretId for your Secret.json was not a valid guid. .
+        /// </summary>
+        internal static string NotValidGuidForUserSecretId {
+            get {
+                return ResourceManager.GetString("NotValidGuidForUserSecretId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify the run name. (Exactly one command line argument expected along with an optional SecretId.).
         /// </summary>
         internal static string RunNameExpected {
             get {
